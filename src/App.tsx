@@ -48,6 +48,13 @@ function App() {
             <p>Ağ programlama prensiplerini kullanarak veri paketlerini analiz eden masaüstü uygulaması.</p>
             <img src="https://via.placeholder.com/300x150" alt="Ağ analiz aracı veri tablosu ekran görüntüsü" />
           </article>
+
+          {/* Yeni Eklenen Lighthouse Başarı Bölümü */}
+          <article>
+            <h3>Erişilebilirlik Performansı</h3>
+            <p>Bu portföy sayfası, Google Lighthouse aracı ile test edilmiş ve erişilebilirlik standartlarına tam uyum sağladığı doğrulanmıştır.</p>
+            <img src="/lighthouse-score.png" alt="Lighthouse erişilebilirlik testi sonucu 93 puan" />
+          </article>
         </section>
 
         {/* İletişim Bölümü ve Form */}
