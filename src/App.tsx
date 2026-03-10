@@ -1,136 +1,112 @@
-function App() {
-  return (
-    <>
-      <a href="#main-content" className="skip-link">Ana içeriğe atla</a>
+import { useState } from 'react';
+import UIKit from './pages/UIKit';
+import Button from './components/Button';
+import Input from './components/Input';
+import Card from './components/Card';
 
-      <header>
-        {/* site-title class'ı eklendi */}
-        <a href="#" className="site-title">Ahmet Demir</a>
-        <nav aria-label="Ana navigasyon">
-          <ul>
-            <li><a href="#hakkimda">Hakkımda</a></li>
-            <li><a href="#projeler">Projeler</a></li>
-            <li><a href="#iletisim">İletişim</a></li>
-          </ul>
-        </nav>
+function Portfolio() {
+  return (
+    <div className="bg-white dark:bg-gray-950 min-h-screen text-gray-900 dark:text-gray-100 font-sans transition-colors">
+      <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 bg-blue-800 text-white p-2 z-50">Ana içeriğe atla</a>
+
+      <header className="sticky top-0 z-40 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700">
+        <div className="max-w-6xl mx-auto px-4 py-3 flex flex-col sm:flex-row justify-between items-center gap-3">
+          <h1 className="text-xl font-bold text-blue-800 dark:text-blue-300">Ahmet Demir</h1>
+          <nav aria-label="Ana navigasyon">
+            <ul className="flex flex-wrap gap-2">
+              <li><a href="#hakkimda" className="px-3 py-1 rounded-md hover:bg-blue-100 dark:hover:bg-gray-800 transition-colors">Hakkımda</a></li>
+              <li><a href="#projeler" className="px-3 py-1 rounded-md hover:bg-blue-100 dark:hover:bg-gray-800 transition-colors">Projeler</a></li>
+              <li><a href="#iletisim" className="px-3 py-1 rounded-md hover:bg-blue-100 dark:hover:bg-gray-800 transition-colors">İletişim</a></li>
+            </ul>
+          </nav>
+        </div>
       </header>
 
       <main id="main-content">
-        
-        {/* Hakkımda Bölümü */}
-        <section id="hakkimda">
-          <h2>Hakkımda</h2>
-          {/* about-content sarmalayıcısı eklendi */}
-          <div className="about-content">
-            <figure>
-              <img src="https://via.placeholder.com/200" alt="Ahmet Demir'in vesikalık fotoğrafı" />
-              <figcaption>Ahmet Demir</figcaption>
+        <section id="hakkimda" className="py-16 px-4">
+          <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-8">
+            <figure className="shrink-0">
+              <div className="w-40 h-40 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center text-4xl shadow-lg object-cover">👨‍💻</div>
             </figure>
             <div>
-              <p>Merhaba! Ben Ahmet Demir. Yazılım mühendisliği 3. sınıf öğrencisiyim. Ağırlıklı olarak modern web teknolojileriyle ilgileniyorum ve erişilebilir arayüzler tasarlamaya odaklanıyorum.</p>
-              {/* skill-tags class'ı eklendi (Uygulama-5) */}
-              <ul className="skill-tags" role="list" aria-label="Beceri etiketleri">
-                <li>HTML5</li>
-                <li>CSS3</li>
-                <li>JavaScript</li>
-                <li>React</li>
-                <li>TypeScript</li>
-                <li>Git</li>
+              <h2 className="text-3xl font-bold mb-4 text-center md:text-left">Hakkımda</h2>
+              <p className="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
+                Merhaba! Ben Ahmet Demir. Yazılım mühendisliği 3. sınıf öğrencisiyim. Ağırlıklı olarak backend geliştirme, veritabanı mimarileri ve modern web/mobil teknolojileriyle ilgileniyorum. Temiz kod yazmayı ve erişilebilir arayüzler tasarlamayı önemsiyorum.
+              </p>
+              <ul className="flex flex-wrap gap-2">
+                <li className="bg-blue-800 text-white px-3 py-1 rounded-full text-sm">Java</li>
+                <li className="bg-blue-800 text-white px-3 py-1 rounded-full text-sm">React</li>
+                <li className="bg-blue-800 text-white px-3 py-1 rounded-full text-sm">Tailwind CSS</li>
+                <li className="bg-blue-800 text-white px-3 py-1 rounded-full text-sm">TypeScript</li>
               </ul>
             </div>
           </div>
         </section>
 
-        {/* Projelerim Bölümü */}
-        <section id="projeler">
-          <h2>Projelerim</h2>
-          
-          {/* project-grid sarmalayıcısı eklendi (Uygulama-6) */}
-          <div className="project-grid">
-            {/* project-card class'ı eklendi */}
-            <article className="project-card">
-              <img src="https://via.placeholder.com/400x200" alt="E-ticaret sitesi ana sayfa ekran görüntüsü" />
-              <h3>E-Ticaret Arayüzü</h3>
-              <p>Erişilebilirlik (a11y) standartlarına uygun, semantik HTML kullanılarak geliştirilmiş alışveriş platformu prototipi.</p>
-              <ul className="skill-tags">
-                <li>React</li>
-                <li>TypeScript</li>
-                <li>CSS Grid</li>
-              </ul>
-            </article>
-
-            <article className="project-card">
-              <img src="https://via.placeholder.com/400x200" alt="Ağ analiz aracı veri tablosu ekran görüntüsü" />
-              <h3>Ağ İletişimi Analiz Aracı</h3>
-              <p>Ağ programlama prensiplerini kullanarak veri paketlerini analiz eden masaüstü uygulaması.</p>
-              <ul className="skill-tags">
-                <li>C++</li>
-                <li>Python</li>
-                <li>Networking</li>
-              </ul>
-            </article>
-
-            <article className="project-card">
-              <img src="/lighthouse-score.png" alt="Lighthouse erişilebilirlik testi sonucu 93 puan" />
-              <h3>Erişilebilirlik Performansı</h3>
-              <p>Bu portföy sayfası, Google Lighthouse aracı ile test edilmiş ve erişilebilirlik standartlarına tam uyum sağladığı doğrulanmıştır.</p>
-              <ul className="skill-tags">
-                <li>a11y</li>
-                <li>Lighthouse</li>
-              </ul>
-            </article>
+        <section id="projeler" className="py-16 px-4 bg-gray-50 dark:bg-gray-900 border-t border-b border-gray-200 dark:border-gray-800">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl font-bold text-center mb-10">Projelerim</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              <Card variant="elevated" title="Gayrimenkul CRM Sistemi">
+                <p className="text-sm text-gray-600 dark:text-gray-400">Yapay zeka ile ilan üretimi ve GPS entegrasyonuna sahip, gayrimenkul ofislerine yönelik kapsamlı web ve mobil entegre CRM projesi.</p>
+              </Card>
+              <Card variant="elevated" title="B2B Gayrimenkul Danışman App">
+                <p className="text-sm text-gray-600 dark:text-gray-400">Gayrimenkul danışmanları için geliştirilmiş B2B mobil ve web platformu.</p>
+              </Card>
+              <Card variant="elevated" title="Ağ İletişimi Analiz Aracı">
+                <p className="text-sm text-gray-600 dark:text-gray-400">Ağ programlama prensipleri kullanılarak veri paketlerini analiz eden masaüstü yazılımı.</p>
+              </Card>
+            </div>
           </div>
         </section>
 
-        {/* İletişim Bölümü ve Form */}
-        <section id="iletisim">
-          <h2>İletişim</h2>
-          
-          <form action="#" method="POST" noValidate>
-            <fieldset>
-              <legend>İletişim Formu</legend>
-              
-              <div className="form-group">
-                <label htmlFor="name">Ad Soyad: </label>
-                <input type="text" id="name" name="name" required minLength={2} aria-describedby="name-error" />
-                <small id="name-error" className="error-msg" role="alert"></small>
+        <section id="iletisim" className="py-16 px-4">
+          <div className="max-w-lg mx-auto">
+            <h2 className="text-3xl font-bold text-center mb-8">İletişim</h2>
+            <form className="space-y-4">
+              <Input id="name" label="Ad Soyad" required />
+              <Input id="email" label="E-posta" type="email" required />
+              <div className="space-y-1">
+                <label htmlFor="message" className="block text-sm font-medium">Mesajınız</label>
+                <textarea id="message" rows={5} required className="w-full px-3 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none dark:bg-gray-800 dark:text-gray-100 dark:border-gray-600 transition-colors"></textarea>
               </div>
-
-              <div className="form-group">
-                <label htmlFor="email">E-posta: </label>
-                <input type="email" id="email" name="email" required aria-describedby="email-error" />
-                <small id="email-error" className="error-msg" role="alert"></small>
-              </div>
-
-              <div className="form-group">
-                <label htmlFor="subject">Konu: </label>
-                <select id="subject" name="subject" required aria-describedby="subject-error">
-                  <option value="">-- Seçiniz --</option>
-                  <option value="is">İş Teklifi</option>
-                  <option value="soru">Soru</option>
-                  <option value="oneri">Öneri</option>
-                </select>
-                <small id="subject-error" className="error-msg" role="alert"></small>
-              </div>
-
-              <div className="form-group">
-                <label htmlFor="message">Mesajınız:</label>
-                <textarea id="message" name="message" rows={5} required minLength={10} aria-describedby="message-error"></textarea>
-                <small id="message-error" className="error-msg" role="alert"></small>
-              </div>
-
-              <button type="submit">Gönder</button>
-            </fieldset>
-          </form>
+              <Button variant="primary" size="lg" type="submit" className="w-full">Gönder</Button>
+            </form>
+          </div>
         </section>
-
       </main>
 
-      <footer>
+      <footer className="bg-gray-100 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 text-center py-6 px-4 text-sm text-gray-500">
         <p>&copy; 2026 Ahmet Demir. Tüm hakları saklıdır.</p>
       </footer>
-    </>
-  )
+    </div>
+  );
 }
 
-export default App
+export default function App() {
+  const [view, setView] = useState<'portfolio' | 'uikit'>('portfolio');
+
+  const toggleDarkMode = () => {
+    document.documentElement.classList.toggle('dark');
+  };
+
+  return (
+    <>
+      {/* Sabit Üst Menü */}
+      <div className="bg-gray-100 dark:bg-gray-800 border-b border-gray-300 dark:border-gray-700 p-3 flex flex-wrap justify-center gap-4 sticky top-0 z-50">
+        <Button variant={view === 'portfolio' ? 'primary' : 'secondary'} size="md" onClick={() => setView('portfolio')}>
+          Portföy Görünümü
+        </Button>
+        <Button variant={view === 'uikit' ? 'primary' : 'secondary'} size="md" onClick={() => setView('uikit')}>
+          UI Kit Görünümü
+        </Button>
+        <Button variant="ghost" size="md" onClick={toggleDarkMode}>
+          🌙 / ☀️ Tema Değiştir
+        </Button>
+      </div>
+
+      {/* Seçilen sayfayı ekrana bas */}
+      {view === 'portfolio' ? <Portfolio /> : <UIKit />}
+    </>
+  );
+}
