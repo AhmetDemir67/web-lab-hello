@@ -3,7 +3,7 @@
 Bu proje, Web Tasarimi ve Programlama dersi kapsaminda Vite + React + TypeScript kullanilarak olusturulmus, erisilebilirlik (a11y) standartlarina uygun kisisel portfoy sayfasidir.
 
 ## Gelistirici
-**Ad Soyad:** Ahmet Demir
+**Ad Soyad:** Ahmet Demir67
 **Ogrenci No:** 235541064
 
 ## Kullanilan Teknolojiler
